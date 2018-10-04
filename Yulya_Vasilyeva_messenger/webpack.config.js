@@ -36,6 +36,12 @@ module.exports = {
                 }
             },
             {
+                enforce: "pre",
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+            },
+            {
                 test: /\.s?css$/,
                 use: [
                     { loader: 'style-loader' },
@@ -78,6 +84,9 @@ module.exports = {
                 ]
             },
         ],
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new MiniCssExtract({ filename: 'css/min.style.css' }),
