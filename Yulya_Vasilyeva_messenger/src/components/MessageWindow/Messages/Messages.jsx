@@ -3,20 +3,21 @@ import './Messages.scss';
 
 //импорт React
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Messages extends PureComponent {
     render() {
-        const { isLoading, comments } = this.props;
-
-        if(isLoading){
-            return <p className="loading-data">Loading ...</p>
-        }
+        const { comments } = this.props;
         return (
             <div className="user-messages">
-                {/* {comments.map((item, indx) => //генерируем сообщения из JSON
-                      <div key={indx} className={`msg-${item.user}`}>{item.message}</div>      
-                )} */}
+                {comments.map((item, indx) => //генерируем сообщения из JSON
+                      <div key={indx} className={'msg-left'}>{item.author}:{item.message}</div>      
+                )} 
             </div>
         );
     }
 }
+Messages.propTypes = {
+    isLoading: PropTypes.bool,
+    comments: PropTypes.array,
+};
