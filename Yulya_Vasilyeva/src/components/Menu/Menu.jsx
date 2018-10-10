@@ -30,8 +30,7 @@ class Menu extends PureComponent {
                             return(
                                 <NavItem key={`mainMenu${item.id}`} >
                                     <NavLink to={item.link} onClick={clickMenu} className={`nav-link${activeIndex}`}>{item.title}</NavLink>
-                                </NavItem>
-                                
+                                </NavItem> 
                             );
                         })}
                     </Nav>
