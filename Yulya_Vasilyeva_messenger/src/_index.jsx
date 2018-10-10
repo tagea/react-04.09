@@ -2,22 +2,28 @@
 import './_index.scss';
 
 //компоненты React
-import React, {PureComponent, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-//компоненты страницы
-import MessageWindow from 'components/MessageWindow/'; //окно со списком сообщений
-import Options from 'components/Options/'; //опции чата
+import routes from './routers';
+import store from './store';
 
 //Главный компонет
-class App extends PureComponent{
-    render(){
-        return(
+class App extends Component {
+    render() {
+        return (
             <Fragment>
-                <MessageWindow />
-                <Options />
+                <Switch>
+                    {/*загружаем список чатов на главную, по ссылке на chat доступен нужный чат*/}
+                    {routes.map((item, indx) => <Route key={indx} {...item} />)}
+                </Switch>
             </Fragment>
         );
     }
 }
-ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(
+    <Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>,
+    document.querySelector('#root')
+);
