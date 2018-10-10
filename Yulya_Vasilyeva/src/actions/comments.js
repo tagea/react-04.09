@@ -8,7 +8,7 @@ export const getCommentsPost = createAction('[CommentsPost] Receive');
 export const mountEventCommentsList = (dispatch) => {
     //список всех комментариев
     requestData('comments').then((data) => {
-        dispatch(getCommentsList(data));//загружаем данные в store
+        dispatch(getCommentsList(data));
     })
 }
 export const mountEventCommentsPost = (dispatch) => (postId) =>{
@@ -18,6 +18,6 @@ export const mountEventCommentsPost = (dispatch) => (postId) =>{
     })
 }
 //отправляем комментарий
-export const sendComment = (dispatch) => (options) =>{
+export const sendComment = () => (options) =>{
     requestData('comments', options);
 }
