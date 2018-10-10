@@ -1,0 +1,34 @@
+@import '../../variables';
+
+.main-header{
+    font-size: 1.5em;
+    margin: 40px 0 20px 0;
+    padding: 0;
+    color: $blueColor;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+.chat{
+    width: 100%*6/12;
+    background-color: $whiteColorTr;
+}
+.chat-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.chat-item{
+    
+    border-bottom:1px solid $greenColorTr;
+}
+.chat-item a{
+    display: block;
+    text-transform: uppercase;
+    color: $blackText;
+    text-decoration: none;
+    padding: 20px;
+}
+.chat-item a:hover{
+    background-color: $extraWhite;
+}
