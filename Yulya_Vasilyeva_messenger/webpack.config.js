@@ -24,6 +24,8 @@ module.exports = {
         alias: {
             components: path.resolve(__dirname, 'src', './components'),
             containers: path.resolve(__dirname, 'src', './containers'),
+            actions: path.resolve(__dirname, 'src', './actions'),
+            reducers: path.resolve(__dirname, 'src', './reducers'),
         },
     },
     module: {
@@ -36,10 +38,10 @@ module.exports = {
                 }
             },
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "eslint-loader",
+                loader: 'eslint-loader',
             },
             {
                 test: /\.s?css$/,
@@ -96,4 +98,4 @@ module.exports = {
         }),
         new CleanPlugin(['dist']),
     ],
-}
+};
