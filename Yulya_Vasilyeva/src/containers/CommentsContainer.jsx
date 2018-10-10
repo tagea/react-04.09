@@ -21,10 +21,11 @@ class CommentsContainer extends PureComponent {
         );
     }
 }
+CommentsContainer.propTypes = {
+    comments: PropTypes.arrayOf(PropTypes.object) 
+}
+
 function mapStateToProps(state, ownProps){
-    CommentsContainer.propTypes = {
-        comments: PropTypes.arrayOf(PropTypes.object) 
-    }
     return{
         ...ownProps,
         comments: state.comments.commentsList,
