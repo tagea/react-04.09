@@ -9,3 +9,15 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+.btn-out{
+    display: inline-block;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: $blueColor;
+    color: $whiteText;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius:5px;
+}
