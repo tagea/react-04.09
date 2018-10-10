@@ -1,0 +1,55 @@
+@import '../../../_variables';
+
+.log-window{
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(235, 235, 235, 0.541);
+}
+.form-group{
+    margin: 10px 0;
+    label{
+        display: block;
+        padding: 10 0px;
+    }
+    input[type="text"], 
+    input[type="password"]{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
+        border: none;
+        height: 40px;
+        background-color: $inputColor;
+        outline: none;
+    }
+    input[type="text"]:focus, 
+    input[type="password"]:focus{
+        background-color: $extraWhite;
+    }
+}
+.btn-enter{
+    font-family: inherit;
+    text-transform: uppercase;
+    width: 100%;
+    height: 40px;
+    background-color: $greenColor;
+    color: $whiteText;
+    border: none;
+    outline: none;
+    border-radius:5px;
+}
+.btn-enter:hover{
+    cursor: pointer;
+    background-color: $darkGrey;
+}
+.btn-enter:active{
+    box-shadow: 0 0 5px 2px $darkGrey; 
+}
+.text{
+    font-size: 0.8em;
+}
