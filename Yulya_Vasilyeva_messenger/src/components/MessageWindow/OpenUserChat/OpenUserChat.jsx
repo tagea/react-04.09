@@ -1,23 +1,32 @@
 //импортируем пользовательские стили
 import './OpenUserChat.scss';
-import UserPic from './img/user-0987.png';
-import ArrowBack from './img/arrow-back.svg';
+import imgArrow from './img/arrow-back.svg';
 
 //импорт React
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter, Link } from 'react-router-dom';
 
-export default class OpenUserChat extends PureComponent {
+import {chatList} from '../../../chat-data';
+
+class OpenUserChat extends PureComponent {
     render() {
+        const { id, match } = this.props;
+        const login = match.params.login;
         return (
             <div className="open-user">
                 <div className="arrow-back">
-                    <img className="arrow-back-img" src={ArrowBack} alt="назад" title="вернуться к списку чатов"/>
+                    <Link to={`/chatroom/${login}`}><img className="arrow-back-img" src={imgArrow} alt="назад" title="вернуться к списку чатов"/></Link>
                 </div>
                 <div className="user-info">
-                    <img className="user-pic" src={UserPic} alt="Ирэн" />
-                    <span className="user-name">Ирэн</span>
+                    <span className="user-name">{chatList[id-1].name}</span>
                 </div>
             </div>
         );
     }
 }
+OpenUserChat.propTypes = {
+    id: PropTypes.string,
+    match: PropTypes.object,
+};
+export default withRouter(OpenUserChat);
